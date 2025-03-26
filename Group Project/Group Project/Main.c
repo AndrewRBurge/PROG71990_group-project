@@ -32,7 +32,7 @@ int main(void) {
 
 	char LetterLabel = 'z';
 	
-	while (LetterLabel != 'f') {
+	while (LetterLabel != 'g') {
 		//display menu 
 		printf("To choose a function, enter its letter label:\n");
 		printf("a) add a task\n");
@@ -51,36 +51,66 @@ int main(void) {
 
 		if (LetterLabel == 'a') {
 			//a)add a task
+			printf("           \n");
+
+			printf("add a task\n");  /// <- place function here
+
+			printf("           \n");
 			
 		}
 
 		if (LetterLabel == 'b') {
 			//b) delete a task
+			printf("           \n");
+
+			printf("delete a task\n"); /// <- place function here
+
+			printf("           \n");
 		}
 
 		if (LetterLabel == 'c') {
 			//c)display single task
+			printf("           \n");
 
+			printf("display single task\n"); /// <- place function here
+
+			printf("           \n");
 		}
 
 		if (LetterLabel == 'd') {
 			//d) display range of tasks
-			
+			printf("           \n");
+
+			printf("display range of tasks\n"); /// <- place function here
+
+			printf("           \n");
 		}
 
 		if (LetterLabel == 'e') {
 			// e) display all tasks
+			printf("           \n");
 
+			printf("display all tasks\n"); /// <- place function here
+
+			printf("           \n");
 		}
 
 		if (LetterLabel == 'f') {
 			// f) search tasks
+			printf("           \n");
 
+			printf("search tasks\n"); /// <- place function here
+
+			printf("           \n");
 		}
 
 		if (LetterLabel == 'g') {
 			// g) Quit
-			printf("quiting program");
+			printf("           \n");
+
+			printf("quiting program\n"); /// <- place function here
+
+			printf("           \n");
 
 			exit(0);
 
