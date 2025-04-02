@@ -22,7 +22,8 @@ required features:
  8. friendly/easy to use UI(or menu system)
  9. save accumulated data to disk
  10. load accumulated data from disk
-
+ 11.you may add additional features, increasing your group’s overall
+ mark to a maximum of 100%.
 
 */
 
@@ -30,11 +31,18 @@ required features:
 
 int main(void) {
 
+	// load data from disk
+	//LoadTaskDataFromFile
+
+
+
+	// UI/menu system by Andrew Burge
 	char LetterLabel = 'z';
 	
 	while (LetterLabel != 'g') {
 		//display menu 
-		printf("To choose a function, enter its letter label:\n");
+		printf("|------------------TASK MANAGER------------------|\n");
+		printf("please input a letter Label below\n");
 		printf("a) add a task\n");
 		printf("b) delete a task\n");
 		printf("c) display single task\n");
@@ -43,6 +51,7 @@ int main(void) {
 		printf("f) search task\n");
 		printf("g) Quit\n");
 		char numsymbols = scanf("%c", &LetterLabel);
+		printf("|------------------------------------------------|\n");
 
 		// there hass been a error involving the input 
 		// my reserch has shown to remove any extra space when inputing values we can us getchar() to only read the letter inputed
@@ -111,6 +120,9 @@ int main(void) {
 			printf("quiting program\n"); /// <- place function here
 
 			printf("           \n");
+
+		//load data to disk
+			//SaveTaskDataToFile();
 
 			exit(0);
 
