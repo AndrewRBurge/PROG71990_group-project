@@ -24,12 +24,18 @@
     <ClCompile Include="List.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="DataToDisk.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Task.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="List.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DataToDisk.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
