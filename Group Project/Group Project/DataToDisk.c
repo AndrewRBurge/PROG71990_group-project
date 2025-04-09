@@ -3,10 +3,10 @@
 #include "List.h"
 
 
-void LoadTaskDataFromFile(void) {
+void LoadTaskDataFromFile() {
 
     printf("data loaded\n");
-    
+   
 	
 	/*
     	
@@ -35,7 +35,7 @@ void LoadTaskDataFromFile(void) {
 
 void SaveTaskDataToFile(PLISTNODE list) {
 	
-    printf("data loaded\n");
+    printf("data saved\n");
 	
 	/*
       FILE *file = fopen("tasks.dat", "wb");

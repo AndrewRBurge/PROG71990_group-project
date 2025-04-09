@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 
-void LoadTaskDataFromFile(void);
+void LoadTaskDataFromFile();
 
 
 void SaveTaskDataToFile(PLISTNODE list);

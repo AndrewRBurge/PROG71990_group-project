@@ -33,10 +33,10 @@ required features:
 
 int main(void) {
 
-	PLISTNODE taskList;
+	PLISTNODE taskList = NULL;
 	
 	// load data from disk
-	void LoadTaskDataFromFile(void);
+	LoadTaskDataFromFile();
 
 
 	// UI/menu system by Andrew Burge
@@ -123,14 +123,16 @@ int main(void) {
 
 		if (LetterLabel == 'g') {
 			// g) Quit
+			//load data to disk
+			SaveTaskDataToFile(taskList);
+
 			printf("           \n");
 
 			printf("quiting program\n"); /// <- place function here
 
 			printf("           \n");
 
-		//load data to disk
-		void SaveTaskDataToFile(taskList);
+		
 
 			exit(0);
 

@@ -14,3 +14,4 @@ void RemoveTaskFromList(PLISTNODE* list, TASK t);
 void DisplayList(PLISTNODE list);
 
 void DeleteList(PLISTNODE* list);
+
