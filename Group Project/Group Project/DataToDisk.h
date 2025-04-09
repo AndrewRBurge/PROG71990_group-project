@@ -1,8 +1,9 @@
 #pragma once
+#include "list.h"
+#include <stdio.h>
 
 
+void LoadTaskDataFromFile(void);
 
-void LoadTaskDataFromFile();
 
-
-void SaveTaskDataToFile();
+void SaveTaskDataToFile(PLISTNODE list);

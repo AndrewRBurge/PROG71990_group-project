@@ -1,6 +1,8 @@
 #include <stdlib.h>
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
+#include "List.h"
+#include "DataToDisk.h"
 
 //PROG71990 - W25 - Group 12 - Task manager
 
@@ -31,31 +33,33 @@ required features:
 
 int main(void) {
 
+	PLISTNODE taskList;
+	
 	// load data from disk
-	//LoadTaskDataFromFile
-
+	void LoadTaskDataFromFile(void);
 
 
 	// UI/menu system by Andrew Burge
 	char LetterLabel = 'z';
-	//display menu 
-	printf("|------------------TASK MANAGER------------------|\n");
-	printf("please input a letter Label below\n");
-	printf("a) add a task\n");
-	printf("b) delete a task\n");
-	printf("c) display single task\n");
-	printf("d) display range of tasks\n");
-	printf("e) display all tasks\n");
-	printf("f) search task\n");
-	printf("g) Quit\n");
-	char numsymbols = scanf("%c", &LetterLabel);
-	printf("|------------------------------------------------|\n");
+	
 
 
 
 	
 	while (LetterLabel != 'g') {
 	
+		//display menu 
+		printf("|------------------TASK MANAGER------------------|\n");
+		printf("please input a letter Label below\n");
+		printf("a) add a task\n");
+		printf("b) delete a task\n");
+		printf("c) display single task\n");
+		printf("d) display range of tasks\n");
+		printf("e) display all tasks\n");
+		printf("f) search task\n");
+		printf("g) Quit\n");
+		char numsymbols = scanf("%c", &LetterLabel);
+		printf("|------------------------------------------------|\n");
 
 		// there hass been a error involving the input 
 		// my reserch has shown to remove any extra space when inputing values we can us getchar() to only read the letter inputed
@@ -126,24 +130,13 @@ int main(void) {
 			printf("           \n");
 
 		//load data to disk
-			//SaveTaskDataToFile();
+		void SaveTaskDataToFile(taskList);
 
 			exit(0);
 
 		}
 
-		//display menu 
-		printf("|------------------TASK MANAGER------------------|\n");
-		printf("please input a letter Label below\n");
-		printf("a) add a task\n");
-		printf("b) delete a task\n");
-		printf("c) display single task\n");
-		printf("d) display range of tasks\n");
-		printf("e) display all tasks\n");
-		printf("f) search task\n");
-		printf("g) Quit\n");
-		char numsymbols = scanf("%c", &LetterLabel);
-		printf("|------------------------------------------------|\n");
+		
 
 	} 
 
