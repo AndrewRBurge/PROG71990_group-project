@@ -35,11 +35,11 @@ void LoadTaskDataFromFile() {
 
 void SaveTaskDataToFile(PLISTNODE list) {
     int savecounter = 0;
-    //printf("data saved\n");
+   
     printf("would like to save your data to disk\nplease input a number below\n1) yes\n2) no\n");
       int numsymbols = scanf("%d", &savecounter); 
         if (savecounter == 1) {
-
+            printf("data saved\n");
             /*
                   FILE *file = fopen("TasksData.dat", "wb");
                 if (file == NULL) {

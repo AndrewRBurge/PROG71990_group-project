@@ -61,6 +61,20 @@ int main(void) {
 		char numsymbols = scanf("%c", &LetterLabel);
 		printf("|------------------------------------------------|\n");
 
+		if (numsymbols != 1) {
+			printf("invalid input");
+			exit(0);         
+		}
+	
+	
+	//if input is equal is not a vaild input we block it 
+	
+	if (LetterLabel != 'a' && LetterLabel != 'b' && LetterLabel != 'c' && LetterLabel != 'd' && LetterLabel != 'e' && LetterLabel != 'f' && LetterLabel != 'g'){     
+	printf("invalid input");
+	 exit(0); 
+	}
+	
+
 		// there hass been a error involving the input 
 		// my reserch has shown to remove any extra space when inputing values we can us getchar() to only read the letter inputed
 		// https://learn.microsoft.com/en-us/previous-versions/visualstudio/visual-studio-2013/x198c66c(v=vs.120)
