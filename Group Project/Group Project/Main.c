@@ -103,7 +103,8 @@ int main(void) {
 			//c)display single task
 			printf("           \n");
 
-			printf("display single task\n"); /// <- place function here
+			printf("display single task\n");
+			DisplaySingleTask(taskList);/// <- place function here
 
 			printf("           \n");
 		}
@@ -112,7 +113,9 @@ int main(void) {
 			//d) display range of tasks
 			printf("           \n");
 
-			printf("display range of tasks\n"); /// <- place function here
+			printf("please input the start of the range\n");
+
+			//DisplayTaskRange(taskList, int startNumber, int endNumber);/// <- place function here
 
 			printf("           \n");
 		}
@@ -121,7 +124,8 @@ int main(void) {
 			// e) display all tasks
 			printf("           \n");
 
-			printf("display all tasks\n"); /// <- place function here
+			printf("display all tasks\n"); 
+			DisplayAllTasks(taskList); /// <- place function here
 
 			printf("           \n");
 		}

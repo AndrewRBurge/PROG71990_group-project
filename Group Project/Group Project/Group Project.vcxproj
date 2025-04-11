@@ -128,12 +128,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="DataToDisk.c" />
+    <ClCompile Include="display.c" />
     <ClCompile Include="List.c" />
     <ClCompile Include="Main.c" />
     <ClCompile Include="Task.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DataToDisk.h" />
+    <ClInclude Include="Display.h" />
     <ClInclude Include="List.h" />
     <ClInclude Include="Task.h" />
   </ItemGroup>
