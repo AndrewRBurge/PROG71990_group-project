@@ -112,10 +112,13 @@ int main(void) {
 		if (LetterLabel == 'd') {
 			//d) display range of tasks
 			printf("           \n");
-
-			printf("please input the start of the range\n");
-
-			//DisplayTaskRange(taskList, int startNumber, int endNumber);/// <- place function here
+			int startNumber;
+			int	endNumber;
+			printf("please input start of range:\n");
+			scanf("%d", &startNumber);
+			printf("please input Enter end of range:\n");
+			scanf("%d", &endNumber);
+		    DisplayTaskRange(taskList,startNumber,endNumber);/// <- place function here
 
 			printf("           \n");
 		}

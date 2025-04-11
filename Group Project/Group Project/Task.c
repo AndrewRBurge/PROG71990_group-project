@@ -2,18 +2,16 @@
 #include "Task.h"
 #include "List.h"
 
-TASK CreateTask(int number, char title, int year, int month, int day) {
+TASK CreateTask(int number, char title[], char decription[]) {
 	TASK T = { 0 };
 	T.number = number;
 	T.title = title;
-	T.year = year;
-	T.month = month;
-	T.day = day;
+    T.description = decription; 
 	return T;
 }
 
 TASK CopyTask(TASK src) {
-	return CreateTask(src.number,src.title,src.year,src.month,src.day);
+	return CreateTask(src.number,src.title,src.description);
 }
 
 bool CompareTask(TASK lhs, TASK rhs) {
@@ -21,13 +19,12 @@ bool CompareTask(TASK lhs, TASK rhs) {
 }
 
 void PrintTask(TASK t) {
-	printf("TASK: %d. %c\nDate: %d/%d/%d", t.number, t.title,t.year,t.month,t.day);
+	printf("TASK: %d. %c\nDate: %d/%d/%d", t.number, t.title,t.description);
 }
 
-void DeleteTask(TASK t) {
+void DeleteTask(PLISTNODE* list) {
     int index;
-
-    printf("Enter task number to delete (1-%d): ", taskCount);
+    TASK t;
 
     scanf("%d", &index);
 
@@ -80,7 +77,7 @@ void updateTask() {
 
 
 void addTask(PLISTNODE* list) {
-
+   
     if (taskCount >= MAX_TASKS) {
 
         printf("Task list is full!\n");
@@ -88,19 +85,28 @@ void addTask(PLISTNODE* list) {
         return;
 
     }
+
+
     TASK t;
-    AddTaskToList(PLISTNODE * list, TASK t);
+    char title[100], description[200];
+    int number;
+
+    printf("Enter task number: ");
+    scanf("%d", &number);
+    getchar(); // clear newline
 
     printf("Enter task title: ");
-
-    scanf(" %[^\n]", tasks[taskCount].title);
+    fgets(title, sizeof(title), stdin);
+    strtok(title, "\n"); // remove trailing newline
 
     printf("Enter task description: ");
+    fgets(description, sizeof(description), stdin);
+    strtok(description, "\n");
 
-    scanf(" %[^\n]", tasks[taskCount].description);
-
+    t = CreateTask(number, title, description);
+   
     taskCount++;
-
+    AddTaskToList(list, t); 
     printf("Task added successfully!\n");
 
 }

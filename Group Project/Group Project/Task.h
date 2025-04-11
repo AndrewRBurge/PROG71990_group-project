@@ -1,6 +1,11 @@
 #pragma once
 #include <stdbool.h>
 
+#define MAX_TASKS 100
+
+#define MAX_LEN 100
+
+/*
 typedef struct Task {
 	int number;
 	char title;
@@ -9,8 +14,18 @@ typedef struct Task {
 	int day;
 } TASK;
 
+*/
+typedef struct Task{
+	int number;
+	char title[MAX_LEN];
 
-TASK CreateTask(int number, char title,int year,int month,int day);
+	char description[MAX_LEN];
+
+} TASK;
+
+int taskCount;
+
+TASK CreateTask(int number, char title, char decription;);
 
 TASK CopyTask(TASK src);
 
