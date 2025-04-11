@@ -3,6 +3,8 @@
 #include "List.h"
 // following functions created by Andrew Burge
 
+//tests for git
+
 void LoadTaskDataFromFile() {
 
     printf("data loaded\n");
@@ -40,9 +42,10 @@ void SaveTaskDataToFile(PLISTNODE list) {
       int numsymbols = scanf("%d", &savecounter); 
         if (savecounter == 1) {
             printf("data saved\n");
-            /*
+            
                   FILE *file = fopen("TasksData.dat", "wb");
                 if (file == NULL) {
+                    
                     fprintf(stderr, "Error opening file for writing\n");
                     return;
                 }
@@ -56,7 +59,7 @@ void SaveTaskDataToFile(PLISTNODE list) {
                 fclose(file);
                 printf("Tasks saved to disk successfully.\n");
 
-                */
+               
 
         }
         else if (savecounter == 2) {
