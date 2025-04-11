@@ -1,6 +1,8 @@
 #include <stdlib.h>
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
+#include "List.h"
+#include "DataToDisk.h"
 
 //PROG71990 - W25 - Group 12 - Task manager
 
@@ -31,15 +33,21 @@ required features:
 
 int main(void) {
 
+	PLISTNODE taskList = NULL;
+	
 	// load data from disk
-	//LoadTaskDataFromFile
-
+	LoadTaskDataFromFile();
 
 
 	// UI/menu system by Andrew Burge
 	char LetterLabel = 'z';
 	
+
+
+
+	
 	while (LetterLabel != 'g') {
+	
 		//display menu 
 		printf("|------------------TASK MANAGER------------------|\n");
 		printf("please input a letter Label below\n");
@@ -52,6 +60,20 @@ int main(void) {
 		printf("g) Quit\n");
 		char numsymbols = scanf("%c", &LetterLabel);
 		printf("|------------------------------------------------|\n");
+
+		if (numsymbols != 1) {
+			printf("invalid input");
+			exit(0);         
+		}
+	
+	
+	//if input is equal is not a vaild input we block it 
+	
+	if (LetterLabel != 'a' && LetterLabel != 'b' && LetterLabel != 'c' && LetterLabel != 'd' && LetterLabel != 'e' && LetterLabel != 'f' && LetterLabel != 'g'){     
+	printf("invalid input");
+	 exit(0); 
+	}
+	
 
 		// there hass been a error involving the input 
 		// my reserch has shown to remove any extra space when inputing values we can us getchar() to only read the letter inputed
@@ -81,7 +103,8 @@ int main(void) {
 			//c)display single task
 			printf("           \n");
 
-			printf("display single task\n"); /// <- place function here
+			printf("display single task\n");
+			DisplaySingleTask(taskList);/// <- place function here
 
 			printf("           \n");
 		}
@@ -90,7 +113,9 @@ int main(void) {
 			//d) display range of tasks
 			printf("           \n");
 
-			printf("display range of tasks\n"); /// <- place function here
+			printf("please input the start of the range\n");
+
+			//DisplayTaskRange(taskList, int startNumber, int endNumber);/// <- place function here
 
 			printf("           \n");
 		}
@@ -99,7 +124,8 @@ int main(void) {
 			// e) display all tasks
 			printf("           \n");
 
-			printf("display all tasks\n"); /// <- place function here
+			printf("display all tasks\n"); 
+			DisplayAllTasks(taskList); /// <- place function here
 
 			printf("           \n");
 		}
@@ -115,18 +141,22 @@ int main(void) {
 
 		if (LetterLabel == 'g') {
 			// g) Quit
+			//load data to disk
+			SaveTaskDataToFile(taskList);
+
 			printf("           \n");
 
 			printf("quiting program\n"); /// <- place function here
 
 			printf("           \n");
 
-		//load data to disk
-			//SaveTaskDataToFile();
+		
 
 			exit(0);
 
 		}
+
+		
 
 	} 
 

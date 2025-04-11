@@ -19,3 +19,32 @@ bool CompareTask(TASK lhs, TASK rhs);
 void PrintTask(TASK t);
 
 void DeleteTask(TASK t);
+
+
+/*
+typedef struct {
+
+    char title[MAX_LEN];
+
+    char description[MAX_LEN];
+
+} Task;
+
+
+
+Task tasks[MAX_TASKS];
+
+int taskCount = 0;
+
+
+
+
+}
+
+
+
+
+
+
+
+*/
