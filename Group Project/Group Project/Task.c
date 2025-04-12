@@ -3,6 +3,8 @@
 #include "Task.h"
 #include "List.h"
 
+// task code taken from class example and modifyed by andrew burge
+
 TASK CreateTask(int number, const char* title, const char* description) {
 	TASK T = { 0 };
 	T.number = number;
@@ -36,43 +38,3 @@ void DeleteTask() {
 
 }
 
-
-
-
-
-/*
-
-
-void PrintTask(TASK t) {
-    printf("TASK: %d. %s\ndecription: %s", t.number, t.title,t.description);
-}
-
-void listTasks() {
-
-    if (taskCount == 0) {
-
-        printf("No tasks to display.\n");
-
-        return;
-
-    }
-
-    for (int i = 0; i < taskCount; i++) {
-
-        printf("\nTask #%d\nTitle: %s\nDescription: %s\n", i + 1, tasks[i].title, tasks[i].description);
-
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-*/

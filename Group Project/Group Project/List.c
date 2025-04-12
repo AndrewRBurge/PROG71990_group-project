@@ -3,6 +3,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// list code taken from class example and modifyed by andrew burge
+
 void AddTaskToList(PLISTNODE* list, TASK t) {
 	PLISTNODE newNode = (PLISTNODE)malloc(sizeof(LISTNODE));
 	if (newNode == NULL) {
@@ -60,6 +62,9 @@ void DeleteList(PLISTNODE* list) {
 		free(tmp);
 	}
 }
+
+// task add/update/delete by solomon Onaghise 
+// edited/intergrated by Andrew Burge
 
 
 void DeleteTaskdata(PLISTNODE* list) {
@@ -128,7 +133,7 @@ void addTask(PLISTNODE* list) {
 
 
     TASK t;
-    char title[100], description[200];
+    char title[100], description[100];
     int number;
 
     printf("Enter task number: ");
@@ -146,7 +151,7 @@ void addTask(PLISTNODE* list) {
 
     t = CreateTask(number, title, description);
 
-   // taskCount++;
+    taskCount++;
     AddTaskToList(list, t);
     printf("Task added successfully!\n");
 
