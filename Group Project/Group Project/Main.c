@@ -1,8 +1,10 @@
-#include <stdlib.h>
+
 #define _CRT_SECURE_NO_WARNINGS
+#include <stdlib.h>
 #include <stdio.h>
 #include "List.h"
 #include "DataToDisk.h"
+#include "Display.h"
 
 //PROG71990 - W25 - Group 12 - Task manager
 
@@ -29,24 +31,24 @@ required features:
 
 */
 
-
+#define StartLetterLabel 'z'
 
 int main(void) {
 
 	PLISTNODE taskList = NULL;
 	
 	// load data from disk
-	LoadTaskDataFromFile();
+	LoadTaskDataFromFile(&taskList);
 
 
 	// UI/menu system by Andrew Burge
-	char LetterLabel = 'z';
+	char LetterLabel = StartLetterLabel;
 	
 
 
 
 	
-	while (LetterLabel != 'g') {
+	while (LetterLabel != 'h') {
 	
 		//display menu 
 		printf("|------------------TASK MANAGER------------------|\n");
@@ -57,8 +59,9 @@ int main(void) {
 		printf("d) display range of tasks\n");
 		printf("e) display all tasks\n");
 		printf("f) search task\n");
-		printf("g) Quit\n");
-		char numsymbols = scanf("%c", &LetterLabel);
+		printf("g) update an existing task\n");
+		printf("h) Quit\n");
+		char numsymbols = scanf(" %c", &LetterLabel);
 		printf("|------------------------------------------------|\n");
 
 		if (numsymbols != 1) {
@@ -68,11 +71,11 @@ int main(void) {
 	
 	
 	//if input is equal is not a vaild input we block it 
-	
-	if (LetterLabel != 'a' && LetterLabel != 'b' && LetterLabel != 'c' && LetterLabel != 'd' && LetterLabel != 'e' && LetterLabel != 'f' && LetterLabel != 'g'){     
-	printf("invalid input");
-	 exit(0); 
-	}
+
+		if (LetterLabel != 'a' && LetterLabel != 'b' && LetterLabel != 'c' && LetterLabel != 'd' && LetterLabel != 'e' && LetterLabel != 'f' && LetterLabel != 'g'&& LetterLabel != 'h') {
+			printf("invalid input");
+			exit(0);
+		}
 	
 
 		// there hass been a error involving the input 
@@ -84,7 +87,8 @@ int main(void) {
 			//a)add a task
 			printf("           \n");
 
-			printf("add a task\n");  /// <- place function here
+			printf("you chose to add a task\n");  
+			addTask(&taskList);/// <- place function here
 
 			printf("           \n");
 			
@@ -94,17 +98,21 @@ int main(void) {
 			//b) delete a task
 			printf("           \n");
 
-			printf("delete a task\n"); /// <- place function here
+			printf("you chose to delete a task\n"); 
+			DeleteTaskdata(&taskList);/// <- place function here
 
 			printf("           \n");
 		}
 
 		if (LetterLabel == 'c') {
 			//c)display single task
+			int input;
 			printf("           \n");
-
-			printf("display single task\n");
-			DisplaySingleTask(taskList);/// <- place function here
+			printf("you chose to display single task\n");
+			printf("please task number:\n");
+			scanf_s("%d", &input);
+			
+			DisplaySingleTask(&taskList, input);/// <- place function here
 
 			printf("           \n");
 		}
@@ -113,9 +121,14 @@ int main(void) {
 			//d) display range of tasks
 			printf("           \n");
 
-			printf("please input the start of the range\n");
-
-			//DisplayTaskRange(taskList, int startNumber, int endNumber);/// <- place function here
+			printf("you chose to display range of tasks\n");
+			int startNumber;
+			int	endNumber;
+			printf("please input start of range:\n");
+			scanf_s("%d", &startNumber);
+			printf("please input Enter end of range:\n");
+			scanf_s("%d", &endNumber);
+		    DisplayTaskRange(&taskList, startNumber, endNumber);/// <- place function here
 
 			printf("           \n");
 		}
@@ -124,8 +137,8 @@ int main(void) {
 			// e) display all tasks
 			printf("           \n");
 
-			printf("display all tasks\n"); 
-			DisplayAllTasks(taskList); /// <- place function here
+			printf("you chose to display all tasks\n"); 
+			DisplayAllTasks(&taskList); /// <- place function here
 
 			printf("           \n");
 		}
@@ -134,15 +147,27 @@ int main(void) {
 			// f) search tasks
 			printf("           \n");
 
-			printf("search tasks\n"); /// <- place function here
+			printf("you chose to search tasks\n"); 
+			SearchTask(&taskList);/// <- place function here
 
 			printf("           \n");
 		}
-
 		if (LetterLabel == 'g') {
-			// g) Quit
+			//g) update an existing task
+			printf("           \n");
+
+			printf("you chose to update an existing task\n");
+			updateTask(&taskList);/// <- place function here
+
+			printf("           \n");
+
+		}
+
+
+		if (LetterLabel == 'h') {
+			// h) Quit
 			//load data to disk
-			SaveTaskDataToFile(taskList);
+			SaveTaskDataToFile(&taskList);
 
 			printf("           \n");
 
