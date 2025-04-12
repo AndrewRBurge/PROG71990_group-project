@@ -5,14 +5,22 @@
 
 
 
-void LoadTaskDataFromFile() {
+void LoadTaskDataFromFile(PLISTNODE* list) {
 
-    printf("data loaded\n");
+    printf("Loading data...\n");
     FILE* file = fopen("TasksData.dat", "rb");
     if (file == NULL) {
-        printf("No saved tasks found, starting fresh\n");
+        printf("No saved tasks found, starting fresh.\n");
         return;
     }
+
+    TASK t;
+    while (fread(&t, sizeof(TASK), 1, file)) {
+        AddTaskToList(list, t);
+    }
+
+    fclose(file);
+    printf("Tasks loaded from disk successfully.\n");
 	
 	/*
     	
@@ -27,6 +35,9 @@ void LoadTaskDataFromFile() {
     printf("Tasks loaded from disk successfully.\n");
     
     
+
+
+  
     
     
     */
@@ -35,7 +46,7 @@ void LoadTaskDataFromFile() {
 }
 
 
-void SaveTaskDataToFile(PLISTNODE list) {
+void SaveTaskDataToFile(PLISTNODE* list) {
     int savecounter = 0;
    
     printf("would like to save your data to disk\nplease input a number below\n1) yes\n2) no\n");

@@ -1,5 +1,12 @@
 ﻿  Main.c
-C:\ConProgramming\PROG71990_group-project\Group Project\Group Project\Main.c(107,4): warning C4013: 'DisplaySingleTask' undefined; assuming extern returning int
-C:\ConProgramming\PROG71990_group-project\Group Project\Group Project\Main.c(127,4): warning C4013: 'DisplayAllTasks' undefined; assuming extern returning int
-  LINK : C:\ConProgramming\PROG71990_group-project\Group Project\x64\Debug\Group Project.exe not found or not built by the last incremental link; performing full link
+C:\ConProgramming\PROG71990_group-project\Group Project\Group Project\Main.c(117,22): warning C4047: 'function': 'PLISTNODE' differs in levels of indirection from 'PLISTNODE *'
+C:\ConProgramming\PROG71990_group-project\Group Project\Group Project\Main.c(117,22): warning C4024: 'DisplaySingleTask': different types for formal and actual parameter 1
+C:\ConProgramming\PROG71990_group-project\Group Project\Group Project\Main.c(131,24): warning C4047: 'function': 'PLISTNODE' differs in levels of indirection from 'PLISTNODE *'
+C:\ConProgramming\PROG71990_group-project\Group Project\Group Project\Main.c(131,24): warning C4024: 'DisplayTaskRange': different types for formal and actual parameter 1
+C:\ConProgramming\PROG71990_group-project\Group Project\Group Project\Main.c(131,35): warning C4047: 'function': 'int' differs in levels of indirection from 'int *'
+C:\ConProgramming\PROG71990_group-project\Group Project\Group Project\Main.c(131,35): warning C4024: 'DisplayTaskRange': different types for formal and actual parameter 2
+C:\ConProgramming\PROG71990_group-project\Group Project\Group Project\Main.c(131,49): warning C4047: 'function': 'int' differs in levels of indirection from 'int *'
+C:\ConProgramming\PROG71990_group-project\Group Project\Group Project\Main.c(131,49): warning C4024: 'DisplayTaskRange': different types for formal and actual parameter 3
+C:\ConProgramming\PROG71990_group-project\Group Project\Group Project\Main.c(141,20): warning C4047: 'function': 'PLISTNODE' differs in levels of indirection from 'PLISTNODE *'
+C:\ConProgramming\PROG71990_group-project\Group Project\Group Project\Main.c(141,20): warning C4024: 'DisplayAllTasks': different types for formal and actual parameter 1
   Group Project.vcxproj -> C:\ConProgramming\PROG71990_group-project\Group Project\x64\Debug\Group Project.exe

@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include "List.h"
 #include "DataToDisk.h"
+#include "Display.h"
 
 //PROG71990 - W25 - Group 12 - Task manager
 
@@ -36,7 +37,7 @@ int main(void) {
 	PLISTNODE taskList = NULL;
 	
 	// load data from disk
-	LoadTaskDataFromFile();
+	LoadTaskDataFromFile(&taskList);
 
 
 	// UI/menu system by Andrew Burge
@@ -68,11 +69,15 @@ int main(void) {
 	
 	
 	//if input is equal is not a vaild input we block it 
-	
-	if (LetterLabel != 'a' && LetterLabel != 'b' && LetterLabel != 'c' && LetterLabel != 'd' && LetterLabel != 'e' && LetterLabel != 'f' && LetterLabel != 'g'){     
+	/*
+		if (LetterLabel != 'a' && LetterLabel != 'b' && LetterLabel != 'c' && LetterLabel != 'd' && LetterLabel != 'e' && LetterLabel != 'f' && LetterLabel != 'g'){     
 	printf("invalid input");
 	 exit(0); 
 	}
+	
+	
+	*/
+
 	
 
 		// there hass been a error involving the input 
@@ -84,7 +89,8 @@ int main(void) {
 			//a)add a task
 			printf("           \n");
 
-			printf("add a task\n");  /// <- place function here
+			printf("add a task\n");  
+			addTask(&taskList);/// <- place function here
 
 			printf("           \n");
 			
@@ -94,17 +100,21 @@ int main(void) {
 			//b) delete a task
 			printf("           \n");
 
-			printf("delete a task\n"); /// <- place function here
+			printf("delete a task\n"); 
+			DeleteTaskdata(&taskList);/// <- place function here
 
 			printf("           \n");
 		}
 
 		if (LetterLabel == 'c') {
 			//c)display single task
+			int input;
 			printf("           \n");
-
+			printf("please task number:\n");
+			scanf_s("%d", &input);
+			
 			printf("display single task\n");
-			DisplaySingleTask(taskList);/// <- place function here
+			DisplaySingleTask(&taskList, input);/// <- place function here
 
 			printf("           \n");
 		}
@@ -115,10 +125,10 @@ int main(void) {
 			int startNumber;
 			int	endNumber;
 			printf("please input start of range:\n");
-			scanf("%d", &startNumber);
+			scanf_s("%d", &startNumber);
 			printf("please input Enter end of range:\n");
-			scanf("%d", &endNumber);
-		    DisplayTaskRange(taskList,startNumber,endNumber);/// <- place function here
+			scanf_s("%d", &endNumber);
+		    DisplayTaskRange(&taskList, &startNumber, &endNumber);/// <- place function here
 
 			printf("           \n");
 		}
@@ -128,7 +138,7 @@ int main(void) {
 			printf("           \n");
 
 			printf("display all tasks\n"); 
-			DisplayAllTasks(taskList); /// <- place function here
+			DisplayAllTasks(&taskList); /// <- place function here
 
 			printf("           \n");
 		}
@@ -145,7 +155,7 @@ int main(void) {
 		if (LetterLabel == 'g') {
 			// g) Quit
 			//load data to disk
-			SaveTaskDataToFile(taskList);
+			SaveTaskDataToFile(&taskList);
 
 			printf("           \n");
 

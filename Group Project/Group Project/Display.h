@@ -1,8 +1,8 @@
 #pragma once
-
-#pragma once
 #include "Task.h"
 #include "List.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 
 void DisplaySingleTask(PLISTNODE list, int taskNumber);

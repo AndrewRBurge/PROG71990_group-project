@@ -1,5 +1,5 @@
 #include "Task.h"
-#include "list.h"
+#include "List.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -59,4 +59,96 @@ void DeleteList(PLISTNODE* list) {
 		DeleteTask(tmp->data);
 		free(tmp);
 	}
+}
+
+
+void DeleteTaskdata(PLISTNODE* list) {
+    int index;
+    TASK t;
+
+    int number;
+    printf("Enter task number to delete: ");
+    scanf_s("%d", &index);
+
+    PLISTNODE current = *list;
+    while (current != NULL) {
+        if (current->data.number == index) {
+            RemoveTaskFromList(list, current->data);
+            printf("Task deleted successfully.\n");
+            taskCount--;
+            return;
+        }
+        current = current->next;
+    }
+
+    printf("Task with number %d not found.\n", index);
+
+}
+
+void updateTask(PLISTNODE* list) {
+
+    int index;
+    int number;
+    printf("Enter task number to update (1-%d): ", taskCount);
+    scanf_s("%d", &number);
+    getchar();
+
+    PLISTNODE current = *list;
+
+    while (current != NULL) {
+        if (current->data.number == number) {
+            printf("Enter new title: ");
+            fgets(current->data.title, sizeof(current->data.title), stdin);
+            strtok(current->data.title, "\n");
+
+            printf("Enter new description: ");
+            fgets(current->data.description, sizeof(current->data.description), stdin);
+            strtok(current->data.description, "\n");
+
+            printf("Task updated successfully.\n");
+            return;
+        }
+        current = current->next;
+    }
+
+    printf("Task with number %d not found.\n", number);
+
+}
+
+
+void addTask(PLISTNODE* list) {
+
+    if (taskCount >= MAX_TASKS) {
+
+        printf("Task list is full!\n");
+
+        return;
+
+    }
+
+
+    TASK t;
+    char title[100], description[200];
+    int number;
+
+    printf("Enter task number: ");
+    scanf_s("%d", &number);
+    getchar();
+
+    printf("Enter task title: ");
+    fgets(title, sizeof(title), stdin);
+    strtok(title, "\n");
+
+    printf("Enter task description: ");
+   fgets(description, sizeof(description), stdin);
+  
+    strtok(description, "\n");
+
+    t = CreateTask(number, title, description);
+
+   // taskCount++;
+    AddTaskToList(list, t);
+    printf("Task added successfully!\n");
+
+
 }

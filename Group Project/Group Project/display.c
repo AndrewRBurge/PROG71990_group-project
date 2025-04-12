@@ -1,5 +1,6 @@
 #include "Display.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 
 void DisplaySingleTask(PLISTNODE list, int taskNumber) {
