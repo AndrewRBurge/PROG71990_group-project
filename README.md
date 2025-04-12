@@ -6,13 +6,14 @@
 -set up search tasks
 -debuging/error fixing
 
-Ahmed Fatah Abdi
--set up Display single task
--set up Range of tasks
--set up display all tasks
+Ahmed: I implemented the following functions: 
+ 4.displaysingleappt/task/recipe/other
+ 5.displayrangeappt/task/recipe/other
+ 6.displayallappt/task/recipe/other
 
 Solomon Onaghise
 -set up task struct
 -set up add task
 -set up delete task
 -set up modify task
+
